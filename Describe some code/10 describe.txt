@@ -1,0 +1,81 @@
+//10 search word in sentence
+#include <stdio.h>
+int main()
+{
+	int con, pos1, pos2, i;
+	//สร้าง con มาเพื่อเป็น loop ใหญ่และสร้าง pos1, pos2 เป็นตัวเก็บตำแหน่ง และสร้าง i เพื่อวนใน for
+	char sen1, sen2, sen3, sen4, sen5, word1, word2;
+	//สร้าง  sen1, sen2, sen3, sen4, sen5 เป็นตัวเก็บตัวอักษรของประโยค และสร้าง word1, word2 เป็นตัวเก็บตัวอักษรของคำที่จะค้นหา
+	con = 1;
+	while(con == 1)
+	{
+		printf("input sentence (5 alphabets)\n");
+		printf("input alphabet 1 : ");
+		scanf(" %c", &sen1);
+		printf("input alphabet 2 : ");
+		scanf(" %c", &sen2);
+		printf("input alphabet 3 : ");
+		scanf(" %c", &sen3);
+		printf("input alphabet 4 : ");
+		scanf(" %c", &sen4);
+		printf("input alphabet 5 : ");
+		scanf(" %c", &sen5);
+		//ให้ใส่ตัวอักษร 5 ตัวเพื่อเป็นคำเริ่มต้น
+
+		printf("input word do you want to search (2 alphabets)\n");
+		printf("input alphabet 1 : ");
+		scanf(" %c", &word1);
+		printf("input alphabet 2 : ");
+		scanf(" %c", &word2);
+		//ให้ใส่ตัวอักษร 2 ตัวเพื่อนำไปค้นหา
+
+		if((word1 == sen1) && (word2 == sen2) )
+		{
+			pos1 = 1;
+			pos2 = 2;
+		}
+		else if((word1 == sen2) && (word2 == sen3) )
+		{
+			pos1 = 2;
+			pos2 = 3;
+		}
+		else if((word1 == sen3) && (word2 == sen4) )
+		{
+			pos1 = 3;
+			pos2 = 4;
+		}
+		else if((word1 == sen4) && (word2 == sen5) )
+		{
+			pos1 = 4;
+			pos2 = 5;
+		}
+		//ถ้าเจอตัวอักษรตัวที่ 1 อยู่ติดกับตัวที่ 2 จึงจะใส่ตำแหน่ง
+		//ที่ต้องให้ตัวอักษรตัวที่ 1 กับ 2 อยู่ติดกันเพราะว่าถ้าตัวอักษรไม่ติดกันมันจะไม่นับเป็นคำเช่นคำว่า go ต้องเป็นตัว g กับ o อยู่ติดกัน
+		else
+		{
+			pos1 = 0;
+			pos2 = 0;
+		}
+		//ถ้าไม่เจอก็ให้ตำแหน่งเป็น 0
+
+		printf("sentence is %c %c %c %c %c \n", sen1, sen2, sen3, sen4, sen5);
+		printf("word is %c %c \n", word1, word2);
+		//แสดงผลประโยคที่ใส่กับคำที่จะค้นหา
+
+		if((pos1 != 0) && (pos2 != 0))
+		{
+			printf("word are found and first alphabet of word are at %d is %c\n", pos1, word1);
+			printf("word are found and secound alphabet of word are at %d is %c\n", pos2, word2);
+		}
+		//ถ้าตำแหน่งไม่ใช่ 0 ก็แปลว่าเจอ และแสดงผลว่าเจอที่ตำแหน่งไหนและเป็นตัวอะไร
+		else
+		{
+			printf("word is not found\n");
+		}
+		//ถ้าตัวใดตัวหนึ่งเป็น 0 ก็แปลว่าไม่เจอ
+
+		printf("continues ? (1 for continues) : ");
+		scanf("%d", &con);
+		//เป็นการถามว่าจะทำต่อไหม และกด 1 เพื่อทำอีกครั้ง
+	}
+}

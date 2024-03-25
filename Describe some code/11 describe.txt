@@ -1,0 +1,78 @@
+//11 direction of robot
+#include <stdio.h>
+int main()
+{
+	int con, x, y, distance, sum_distance;
+	//สร้างตัวแปร x, y มาเก็บแกน x, y และสร้าง distance เป็นตัวเก็บระยะทาง และ sum_distance เป็นระยะทางทั้งหมด
+	con = 1;
+	sum_distance = 0;
+	while(con == 1)
+	{
+		printf("input your x axis (0, 1, -1) : ");
+		scanf("%d", &x);
+		printf("input your y axis (0, 1, -1) : ");
+		scanf("%d", &y);
+		printf("input your distance : ");
+		scanf("%d", &distance);
+		//ให้ใส่แกน x, y และระยะทาง
+
+		if(x == 0 && y == 1)
+		{
+			printf("North with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == 0 && y == 1)
+		{
+			printf("North with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == 0 && y == -1)
+		{
+			printf("South with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == 1 && y == 0)
+		{
+			printf("East with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == -1 && y == 0)
+		{
+			printf("West with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == 1 && y == 1)
+		{
+			printf("Northwest with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == 1 && y == -1)
+		{
+			printf("Southeast with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		else if(x == -1 && y == -1)
+		{
+			printf("Southwest with %d distance\n", distance);
+			sum_distance += distance;
+			printf("sum distance = %d\n", sum_distance);
+		}
+		//นำ x, y มาหหาทิศทาง เช่น ถ้า x เป็น 0 และ y เป็น 1 ก็แสดงว่าเป็นทิศเหนือ ก็จะแสดงผลว่าทิศเหนือด้วยระยะทางเท่าไร แล้วระยะทางรวมเท่าไร
+		else
+		{
+			printf("wrong input\n");
+		}
+		//ถ้าไม่ได้ใส่ 0, 1, -1 ก็จะบอกว่า wrong input
+
+		printf("continues ? (1 for continues) : ");
+		scanf("%d", &con);
+		//เป็นการถามว่าจะทำต่อไหม และกด 1 เพื่อทำอีกครั้ง
+	}
+}
